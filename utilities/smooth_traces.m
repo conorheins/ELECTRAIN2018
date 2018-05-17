@@ -17,11 +17,7 @@ function [smoothed_matrix] = smooth_traces(data_matrix,Fs,Tw,Ts)
 % Output:
 % smoothed_matrix   (locally smoothed data).
 
-[n,T] = size(data_matrix);
-if T < n
-    data_matrix = data_matrix';
-    [n,~] = size(data_matrix);
-end
+n = size(data_matrix,1);
 
 for i = 1:n
     smoothed_matrix(i,:) = locsmooth(data_matrix(i,:),Fs,Tw,Ts);
