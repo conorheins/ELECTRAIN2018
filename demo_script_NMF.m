@@ -10,9 +10,8 @@ img_nam = fullfile(fdir,fnam); % combine file directory and name to create image
 
 img = loadtiff(img_nam); % loadtiff(img_nam, start_frame, numFrames2Read) - can also specify start frame and until when to read
 
-%% other approaches -- e.g. 'active pixel mask' and subsequent NMF (non-negative matrix factorization)
-
-%  aggressive downsampling to make the factorization less
+%%  downsampling
+% aggressive downsampling to make the factorization less
 % computationally-expensive
 
 spatial_ds_factor = 4;
